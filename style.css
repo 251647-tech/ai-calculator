@@ -1,0 +1,246 @@
+/* Background */
+.glass-bg {
+    background: linear-gradient(135deg, #0f0f17, #1b1b2f, #162447);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+    user-select: none;
+}
+
+/* Top Bar */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 15px;
+}
+
+.top-bar button {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 8px 14px;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Layout */
+.main-container {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+}
+
+/* Calculator Panel */
+.calculator {
+    flex: 1;
+    padding: 18px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255,255,255,0.15);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+}
+
+/* Displays */
+.expression {
+    height: 28px;
+    font-size: 18px;
+    color: #9effff;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.display {
+    height: 42px;
+    font-size: 28px;
+    color: #ffffff;
+    text-align: right;
+    padding-right: 10px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Grid Buttons */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.btn {
+    background: rgba(255,255,255,0.08);
+    border: 2px solid rgba(25,255,255,0.25);
+    backdrop-filter: blur(10px);
+    padding: 16px;
+    font-size: 18px;
+    color: #eaffff;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 12px cyan;
+    transform: translateY(-2px);
+}
+
+/* Special buttons */
+.op {
+    color: #00eaff;
+    border-color: rgba(0,255,255,0.4);
+}
+
+.fn {
+    color: #ff7bf8;
+}
+
+.equal {
+    background: linear-gradient(135deg, #00fff0, #008cff);
+    color: #000;
+    font-weight: bold;
+    border: none;
+}
+
+.danger {
+    background: rgba(255,40,70,0.4);
+    border-color: rgba(255,80,100,0.7);
+}
+
+/* History Panel */
+.history {
+    width: 230px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 18px;
+    padding: 15px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+}
+
+.history h2 {
+    margin-top: 0;
+}
+
+.history li {
+    background: rgba(255,255,255,0.08);
+    margin: 6px 0;
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.small-btn {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 6px;
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+}
+/* AI floating bubble (add to style.css) */
+.ai-bubble {
+  position: fixed;
+  right: 20px;
+  bottom: 22px;
+  width: 360px;
+  max-width: calc(100% - 40px);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 40px rgba(2,6,23,0.6), 0 0 36px rgba(0,200,255,0.06);
+  color: #eafcff;
+  overflow: hidden;
+  z-index: 9999;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.ai-bubble .head {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  padding:10px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.ai-bubble h4 { margin:0; font-size:14px; color:#fff; }
+.ai-bubble .close-btn { background:transparent; border:0; color:#fff; cursor:pointer; font-size:18px; }
+
+.ai-bubble .body { padding:10px 12px; }
+.ai-bubble input[type="text"] {
+  width:100%;
+  padding:10px 12px;
+  border-radius:10px;
+  background: rgba(0,0,0,0.25);
+  border:1px solid rgba(255,255,255,0.04);
+  color: white;
+  outline: none;
+  margin-bottom:8px;
+}
+
+.ai-bubble .example-list { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+.ai-bubble .example { background: rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px; cursor:pointer; font-size:13px; color:#dff; }
+
+.ai-bubble .results { max-height:220px; overflow:auto; font-size:13px; color:#dbefff; }
+.ai-bubble .result-row { padding:8px; border-radius:8px; margin-bottom:6px; background: rgba(255,255,255,0.015); }
+.ai-bubble .steps { font-size:12px; color:#bfe8ff; margin-top:6px; padding-left:12px; }
+.ai-toggle-btn {
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  background: linear-gradient(135deg,#ff3cac,#00d4ff);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow: 0 8px 40px rgba(99,102,241,0.12), 0 0 18px rgba(236,72,153,0.08);
+  z-index: 9998;
+  cursor: pointer;
+  color: #001;
+  font-weight:700;
+}
+.ai-bubble {
+  position: fixed;
+  right: 20px;
+  bottom: 22px;
+  width: 360px;
+  max-width: calc(100% - 40px);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  z-index: 9999;
+  padding: 0;
+}
+.ai-bubble .head {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.ai-bubble input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border: none;
+}
+.ai-toggle-btn {
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#ff3cac,#00d4ff);
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  z-index: 10000;
+}
