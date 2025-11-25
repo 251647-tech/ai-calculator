@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Glass Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="glass-bg">
+
+<!-- Top Control Bar -->
+<div class="top-bar">
+    <button id="historyToggle" aria-expanded="false">📜 History</button>
+    <button id="degToggle">DEG</button>
+</div>
+
+<!-- Main Container -->
+<div class="main-container">
+
+    <!-- Calculator -->
+    <div class="calculator">
+        
+        <div id="expression" class="expression"></div>
+        <div id="display" class="display">0</div>
+
+        <!-- Buttons -->
+        <div class="buttons">
+
+            <!-- Row 1 -->
+            <button class="btn fn" data-fn="sin(">sin</button>
+            <button class="btn fn" data-fn="cos(">cos</button>
+            <button class="btn fn" data-fn="tan(">tan</button>
+            <button class="btn fn" data-fn="csc(">csc</button>
+
+            <!-- Row 2 -->
+            <button class="btn fn" data-fn="sec(">sec</button>
+            <button class="btn fn" data-fn="cot(">cot</button>
+            <button class="btn fn" data-fn="log(">log</button>
+            <button class="btn fn" data-fn="ln(">ln</button>
+
+            <!-- Row 3 -->
+            <button class="btn" data-val="^2">x²</button>
+            <button class="btn" data-val="^3">x³</button>
+            <button class="btn" data-val="^">xʸ</button>
+            <button class="btn" data-val="!">n!</button>
+
+            <!-- Row 4 -->
+            <button class="btn fn" data-fn="sqrt(">√</button>
+            <button class="btn" data-val="(">(</button>
+            <button class="btn" data-val=")">)</button>
+            <button class="btn danger" data-action="clear">C</button>
+
+            <!-- Row 5 -->
+            <button class="btn op" data-val="%">%</button>
+            <button class="btn" data-val="7">7</button>
+            <button class="btn" data-val="8">8</button>
+            <button class="btn" data-val="9">9</button>
+
+            <!-- Row 6 -->
+            <button class="btn op" data-val="/">÷</button>
+            <button class="btn" data-val="4">4</button>
+            <button class="btn" data-val="5">5</button>
+            <button class="btn" data-val="6">6</button>
+
+            <!-- Row 7 -->
+            <button class="btn op" data-val="*">×</button>
+            <button class="btn" data-val="1">1</button>
+            <button class="btn" data-val="2">2</button>
+            <button class="btn" data-val="3">3</button>
+
+            <!-- Row 8 -->
+            <button class="btn op" data-val="-">−</button>
+            <button class="btn" data-val="0">0</button>
+            <button class="btn" data-val=".">.</button>
+            <button class="btn danger" data-action="back">⌫</button>
+
+            <!-- Row 9 -->
+            <button class="btn op" data-val="+">+</button>
+            <button class="btn equal" data-action="equals">=</button>
+
+        </div>
+    </div>
+
+    <!-- History Panel -->
+    <aside id="historyPanel" class="history" hidden>
+        <h2>History</h2>
+        <button id="clearHistory" class="small-btn">Clear</button>
+        <button id="exportHistory" class="small-btn">Export</button>
+        <ul id="historyList"></ul>
+    </aside>
+
+</div>
+<script src="script.js"></script>
+<script src="ai-nl.js"></script>
+
+</body>
+</html>
